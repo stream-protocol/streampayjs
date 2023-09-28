@@ -105,11 +105,11 @@
 }
 
 .logo,
-.streampay {
+.thirteen {
     position: relative;
 }
 
-.streampay {
+.thirteen {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,8 +123,8 @@
     box-shadow: 0px 2px 8px -1px #0000001a;
 }
 
-.streampay::before,
-.streampay::after {
+.thirteen::before,
+.thirteen::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -133,7 +133,7 @@
 
 /* Conic Gradient Animation */
 
-.streampay::before {
+.thirteen::before {
     animation: 6s rotate linear infinite;
     width: 200%;
     height: 200%;
@@ -143,7 +143,7 @@
 
 /* Inner Square */
 
-.streampay::after {
+.thirteen::after {
     inset: 0;
     padding: 1px;
     border-radius: var(--border-radius);
@@ -165,7 +165,7 @@
 }
 
 @media (prefers-reduced-motion) {
-    .streampay::before {
+    .thirteen::before {
         animation: none;
     }
     .card:hover span {
@@ -248,7 +248,7 @@
         filter: invert(1);
     }
     .logo,
-    .streampay img {
+    .thirteen img {
         filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
     }
 }
