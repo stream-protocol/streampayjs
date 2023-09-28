@@ -1,12 +1,26 @@
 {
-    "name": "streampayjs",
-    "version": "0.0.1",
-    "description": "React hooks for StreamPay.",
-    "main": "index.ts",
+    "name": "streampayjs-docs",
+    "license": "MIT",
+    "private": true,
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "next build",
+        "clean": "rimraf .next .turbo",
+        "dev": "next",
+        "start": "next start"
     },
-    "author": "Stream Protocol",
-    "repository": "https://github.com/stream-protocol/streampayjs",
-    "license": "MIT"
+    "dependencies": {
+        "next": "^13.5.3",
+        "nextra": "workspace:*",
+        "nextra-theme-docs": "workspace:*",
+        "react": "*",
+        "react-dom": "*"
+    },
+    "dependenciesMeta": {
+        "nextra": {
+            "injected": true
+        },
+        "nextra-theme-docs": {
+            "injected": true
+        }
+    }
 }
