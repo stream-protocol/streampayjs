@@ -1,38 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# StreamPay JS
+
+React hooks for Stream**Pay** with Solana Blockchain integration.
+
+## Table of Contents
+
+- [StreamPay JS](#streampay-js)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Installation](#installation)
+    - [Usage](#usage)
+  - [Documentation](#documentation)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## Introduction
+
+A brief introduction to your project, explaining what Stream**Pay** JS is and why it's useful.
+
+## Features
+
+List the key features and capabilities of StreamPay JS library. Highlight what sets it apart from other payment integrations for Stream**Pay**.
 
 ## Getting Started
 
-First, run the development server:
+Provide instructions on how to get started with Stream**Pay** JS, including installation and basic usage.
+
+### Installation
 
 ```bash
-npm run dev
+npm install streampayjs
 # or
-yarn dev
-# or
-pnpm dev
+yarn add streampayjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Usage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```javascript
+import { useStreamPay } from 'streampayjs';
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+function MyComponent() {
+  const { initiatePayment, capturePayment, refundPayment, ... } = useStreamPay();
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  // Your code here
+}
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Documentation
 
-## Learn More
+Link to more detailed documentation if available.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Explain how others can contribute to your project. Include guidelines for submitting issues, making pull requests, and any coding standards you follow.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

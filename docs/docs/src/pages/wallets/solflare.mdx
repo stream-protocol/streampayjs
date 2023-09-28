@@ -1,0 +1,57 @@
+---
+title: Solflare Wallet Integration
+---
+
+# Solflare Wallet Integration
+
+StreamPay JS allows you to easily connect the Solflare wallet to your decentralized application (dApp). This integration enables users to interact with your dApp using their Solflare wallet for secure and convenient transactions.
+
+## Prerequisites
+
+Before integrating Solflare wallet with your dApp, make sure you have the following prerequisites in place:
+
+- [StreamPay JS](#link_to_streampayjs) installed in your project.
+
+## Installation
+
+To get started with Solflare wallet integration, follow these steps:
+
+1. Install the Solflare Wallet package:
+
+```bash
+npm install solflare-wallet
+# or
+yarn add solflare-wallet
+```
+
+## Usage
+
+Once you have Solflare Wallet installed, you can easily connect it to your dApp. Here's an example of how to do it:
+
+```jsx
+import React from 'react';
+import { SolflareWallet } from 'streampayjs'; // Make sure to import from the correct package
+
+function MyDapp() {
+  const connectWallet = async () => {
+    try {
+      const wallet = new SolflareWallet();
+      await wallet.connect();
+      console.log('Solflare wallet connected successfully');
+    } catch (error) {
+      console.error('Failed to connect Solflare wallet', error);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={connectWallet}>Connect Solflare Wallet</button>
+      {/* Your dApp content here */}
+    </div>
+  );
+}
+
+export default MyDapp;
+```
+
+In the example above, we import the `SolflareWallet` class from the `streampayjs` package and use it to connect the Solflare wallet when the "Connect Solflare Wallet" button is clicked.

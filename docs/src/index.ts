@@ -1,0 +1,1 @@
+export { TestStreamPayJS } from "./test"
