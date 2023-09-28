@@ -1,0 +1,64 @@
+---
+title: Using the useDisconnect Hook
+---
+
+# Using the useDisconnect Hook
+
+The `useDisconnect` hook from StreamPay JS allows you to disconnect an already connected StreamPay or Solana wallet from your decentralized application (DApp).
+
+## Installation
+
+Before using the `useDisconnect` hook, make sure you have StreamPay JS installed in your project. If you haven't already, you can install it as follows:
+
+```bash
+npm install streampayjs
+# or
+yarn add streampayjs
+```
+
+## Usage
+
+Once StreamPay JS is installed, you can use the `useDisconnect` hook in your DApp to provide users with the option to disconnect their wallets. Here's an example of how to use it:
+
+```jsx
+import React from 'react';
+import { useDisconnect } from 'streampayjs'; // Make sure to import from the correct package
+
+function MyDapp() {
+  const { disconnect, isConnected } = useDisconnect();
+
+  const disconnectWallet = async () => {
+    try {
+      await disconnect(); // Disconnect the wallet
+      console.log('Wallet disconnected successfully');
+    } catch (error) {
+      console.error('Failed to disconnect wallet', error);
+    }
+  };
+
+  return (
+    <div>
+      {isConnected ? (
+        <div>
+          <button onClick={disconnectWallet}>Disconnect Wallet</button>
+          <p>Wallet is connected</p>
+        </div>
+      ) : (
+        <p>Wallet is not connected</p>
+      )}
+      {/* Your DApp content here */}
+    </div>
+  );
+}
+
+export default MyDapp;
+```
+
+In the code above, we import the `useDisconnect` hook from the `streampayjs` package and use it to disconnect the wallet when the "Disconnect Wallet" button is clicked. We also display a message indicating whether the wallet is connected or not.
+
+## Return Value
+
+The `useDisconnect` hook returns an object with two properties:
+
+- `disconnect`: This is a function that you can call to disconnect the wallet.
+- `isConnected`: A boolean value indicating whether the wallet is currently connected or not.

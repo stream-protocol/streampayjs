@@ -1,0 +1,12 @@
+{
+    "name": "streampayjs",
+    "version": "0.0.1",
+    "description": "React hooks for StreamPay.",
+    "main": "index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Stream Protocol",
+    "repository": "https://github.com/stream-protocol/streampayjs",
+    "license": "MIT"
+}

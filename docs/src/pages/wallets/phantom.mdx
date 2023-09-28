@@ -1,0 +1,57 @@
+---
+title: Phantom Wallet Integration
+---
+
+# Phantom Wallet Integration
+
+StreamPay JS provides an easy way to connect the Phantom wallet to your decentralized application (DApp). By integrating Phantom, users can interact with your DApp securely and conveniently.
+
+## Prerequisites
+
+Before integrating the Phantom wallet with your DApp, ensure you have the following prerequisites:
+
+- [StreamPay JS](#link_to_streampayjs) installed in your project.
+
+## Installation
+
+To begin integrating the Phantom wallet, follow these steps:
+
+1. Install the Phantom Wallet package:
+
+```bash
+npm install phantom-wallet
+# or
+yarn add phantom-wallet
+```
+
+## Usage
+
+Once you have Phantom Wallet installed, you can connect it to your DApp with ease. Here's an example of how to do it:
+
+```jsx
+import React from 'react';
+import { PhantomWallet } from 'streampayjs'; // Make sure to import from the correct package
+
+function MyDapp() {
+  const connectWallet = async () => {
+    try {
+      const wallet = new PhantomWallet();
+      await wallet.connect();
+      console.log('Phantom wallet connected successfully');
+    } catch (error) {
+      console.error('Failed to connect Phantom wallet', error);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={connectWallet}>Connect Phantom Wallet</button>
+      {/* Your DApp content here */}
+    </div>
+  );
+}
+
+export default MyDapp;
+```
+
+In the code above, we import the `PhantomWallet` class from the `streampayjs` package and use it to connect the Phantom wallet when the "Connect Phantom Wallet" button is clicked.

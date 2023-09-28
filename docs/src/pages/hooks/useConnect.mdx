@@ -1,0 +1,62 @@
+---
+title: Using the useConnect Hook
+---
+
+# Using the useConnect Hook
+
+The `useConnect` hook from StreamPay JS allows you to easily connect a StreamPay or Solana wallet to your decentralized application (DApp). This enables users to interact with your DApp using their wallets securely.
+
+## Installation
+
+Before using the `useConnect` hook, make sure you have StreamPay JS installed in your project. If you haven't already, you can install it as follows:
+
+```bash
+npm install streampayjs
+# or
+yarn add streampayjs
+```
+
+## Usage
+
+Once StreamPay JS is installed, you can use the `useConnect` hook in your DApp. Here's an example of how to use it:
+
+```jsx
+import React from 'react';
+import { useConnect } from 'streampayjs'; // Make sure to import from the correct package
+
+function MyDapp() {
+  const { connector: activeConnector, isConnected } = useConnect();
+
+  const connectWallet = async () => {
+    try {
+      await activeConnector.connect(); // Connect the wallet
+      console.log('Wallet connected successfully');
+    } catch (error) {
+      console.error('Failed to connect wallet', error);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={connectWallet}>Connect Wallet</button>
+      {isConnected ? (
+        <p>Wallet is connected</p>
+      ) : (
+        <p>Wallet is not connected</p>
+      )}
+      {/* Your DApp content here */}
+    </div>
+  );
+}
+
+export default MyDapp;
+```
+
+In the code above, we import the `useConnect` hook from the `streampayjs` package and use it to connect the wallet when the "Connect Wallet" button is clicked. We also display a message indicating whether the wallet is connected or not.
+
+## Return Value
+
+The `useConnect` hook returns an object with two properties:
+
+- `connector`: This is the active wallet connector that you can use to connect the wallet.
+- `isConnected`: A boolean value indicating whether the wallet is currently connected or not.
